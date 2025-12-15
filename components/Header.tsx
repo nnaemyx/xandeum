@@ -6,7 +6,11 @@ import { useWalletModal } from '@solana/wallet-adapter-react-ui';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function Header() {
+interface HeaderProps {
+  onMenuClick?: () => void;
+}
+
+export default function Header({ onMenuClick }: HeaderProps) {
   const { publicKey, disconnect } = useWallet();
   const { setVisible } = useWalletModal();
   const router = useRouter();
@@ -66,6 +70,12 @@ export default function Header() {
     <header className="flex items-center justify-between whitespace-nowrap border-b border-white/5 py-4 px-8 bg-[#0B0E14]/80 backdrop-blur-md sticky top-0 z-50">
       {/* Mobile Logo (Visible only on small screens) */}
       <div className="flex items-center gap-4 lg:hidden">
+        <button
+          onClick={onMenuClick}
+          className="p-2 -ml-2 text-white/60 hover:text-white transition-colors"
+        >
+          <span className="material-symbols-outlined">menu</span>
+        </button>
         <Link href="/" className="size-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
           <svg fill="none" viewBox="0 0 48 48" className="size-5 text-white">
             <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
