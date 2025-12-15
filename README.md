@@ -5,16 +5,19 @@ A comprehensive analytics dashboard for Xandeum pNodes (storage provider nodes),
 ![Xandeum pNode Analytics](https://img.shields.io/badge/Xandeum-pNode%20Analytics-blue)
 ![Next.js](https://img.shields.io/badge/Next.js-16.0-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-repo%2Fxandeum-dashboard)
 
 ## Features
 
 - **Real-time pNode Monitoring**: Fetches and displays all pNodes from Xandeum network gossip using pRPC (pNode RPC) calls
 - **Comprehensive Statistics**: Overview cards showing total nodes, online status, storage capacity, and average uptime
 - **Interactive Data Table**: Sortable, searchable, and filterable table of all pNodes with key metrics
+- **CSV Export**: Instantly download pNode data for offline analysis
 - **Storage Visualization**: Bar charts showing storage distribution by region
+- **Protected Access**: Dashboard requires Solana wallet connection for security
+- **Mobile Optimized**: Fully responsive design with slide-out sidebar for mobile devices
 - **Auto-refresh**: Automatically updates data every 30 seconds
 - **Dark Mode Support**: Built-in dark mode for better viewing experience
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 
 ## Tech Stack
 
@@ -162,12 +165,14 @@ Update the `PRPC_ENDPOINT` constant in `lib/pnode-api.ts` or set the `NEXT_PUBLI
 
 ## Usage
 
-1. **View Dashboard**: The main page displays an overview of all pNodes with key statistics
-2. **Search pNodes**: Use the search bar to filter pNodes by pubkey, ID, or region
-3. **Filter by Status**: Use the status dropdown to filter by online/offline/syncing
-4. **Sort Data**: Click column headers to sort the table
-5. **View Charts**: Scroll down to see storage distribution charts
-6. **Refresh Data**: Click the "Refresh" button or wait for auto-refresh (30 seconds)
+1. **Connect Wallet**: Click "Connect Wallet" in the top right or on the landing screen to access the dashboard
+2. **View Dashboard**: The main page displays an overview of all pNodes with key statistics
+3. **Search pNodes**: Use the search bar to filter pNodes by pubkey, ID, or region
+4. **Filter by Status**: Use the status dropdown to filter by online/offline/syncing
+5. **Sort Data**: Click column headers to sort the table
+6. **Export Data**: Click "Export CSV" to download the current pNode list
+7. **View Charts**: Scroll down to see storage distribution charts
+8. **Refresh Data**: Click the "Refresh" button or wait for auto-refresh (30 seconds)
 
 ## Features in Detail
 
